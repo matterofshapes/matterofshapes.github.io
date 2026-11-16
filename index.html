@@ -248,6 +248,9 @@ address b{font-weight:600}
 .mailbox{display:flex;flex-direction:column;gap:14px;padding:26px 28px 28px;background:var(--fbg)}
 .mailbox .addr{font-size:19px;color:var(--ink);user-select:all;word-break:break-all}
 .mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.mailitem{display:flex;flex-direction:column;gap:12px}
+.mailitem+.mailitem{border-top:1px solid var(--line);padding-top:18px}
+.mailbox .who{margin:0;font-size:15px;color:var(--dim)}
 .copied{font-size:15px;color:var(--dim)}
 .inst{display:flex;flex-direction:column;gap:8px}
 .inst li{font-size:16px;color:var(--dim);padding-block:6px;border-top:1px solid var(--line)}
@@ -963,10 +966,20 @@ address b{font-weight:600}
     </address>
     <div class="mailbox fr fr-line">
       <p class="eyebrow">Write to the group</p>
-      <p class="mono addr" id="mail">c.nitsch@unina.it</p>
-      <div class="mailrow">
-        <button type="button" class="btn fr" id="copy"><span class="lbl">Copy address</span></button>
-        <span class="copied" id="copied" role="status" aria-live="polite"></span>
+      <div class="mailitem">
+        <p class="mono addr">matterofshapes@gmail.com</p>
+        <div class="mailrow">
+          <button type="button" class="btn fr copy"><span class="lbl">Copy address</span></button>
+          <span class="copied" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="mailitem">
+        <p class="who">Carlo Nitsch</p>
+        <p class="mono addr">c.nitsch@unina.it</p>
+        <div class="mailrow">
+          <button type="button" class="btn fr copy"><span class="lbl">Copy address</span></button>
+          <span class="copied" role="status" aria-live="polite"></span>
+        </div>
       </div>
     </div>
     <div>
@@ -1035,13 +1048,15 @@ address b{font-weight:600}
   window.__pubsRefresh=function(){fillYears();if(!picked){curY=latest();ysel.value=curY;}apply();};
   curY=latest();ysel.value=curY;apply();
 
-  var btn=document.getElementById('copy'),out=document.getElementById('copied'),mail=document.getElementById('mail');
-  function selectMail(){var r=document.createRange();r.selectNodeContents(mail);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
-  btn.addEventListener('click',function(){
-    var t=mail.textContent.trim();
-    var ok=function(){out.textContent='Copied';setTimeout(function(){out.textContent='';},2200);};
-    var fail=function(){selectMail();out.textContent='Selected. Press Ctrl+C or ⌘C to copy.';};
-    try{navigator.clipboard.writeText(t).then(ok,fail);}catch(e){fail();}
+  [].forEach.call(document.querySelectorAll('.mailitem'),function(item){
+    var btn=item.querySelector('.copy'),out=item.querySelector('.copied'),mail=item.querySelector('.addr');
+    function selectMail(){var r=document.createRange();r.selectNodeContents(mail);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+    btn.addEventListener('click',function(){
+      var t=mail.textContent.trim();
+      var ok=function(){out.textContent='Copied';setTimeout(function(){out.textContent='';},2200);};
+      var fail=function(){selectMail();out.textContent='Selected. Press Ctrl+C or ⌘C to copy.';};
+      try{navigator.clipboard.writeText(t).then(ok,fail);}catch(e){fail();}
+    });
   });
 })();
 (function(){
