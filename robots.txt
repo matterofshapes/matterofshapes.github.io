@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matterofshapes.github.io/sitemap.xml
