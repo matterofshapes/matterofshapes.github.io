@@ -217,8 +217,8 @@ html{scroll-padding-top:var(--barh,84px)}
 .pv .off{font-size:15px;color:var(--dim);opacity:.75;cursor:default}
 .pubs-note{font-size:15px;color:var(--dim)}
 .pubs-empty{font-size:17px;color:var(--dim);padding:28px 0}
-.pp-note{font-size:16px;color:var(--dim)}
-.pp-note .kind{display:inline-flex;margin-right:6px;vertical-align:1px}
+.pplist{padding:4px 0}
+.pp-none{font-size:17px;color:var(--dim)}
 
 /* events: same year groups as the publications */
 .sec-sub{color:var(--dim);font-size:16.5px}
@@ -333,6 +333,7 @@ address b{font-weight:600}
     <a href="#research">Research</a>
     <a href="#people">People</a>
     <a href="#publications">Publications</a>
+    <a href="#prepreprints">Pre-preprints</a>
     <a href="#events">Conferences</a>
     <a href="#code">Code</a>
     <a href="#contact">Contact</a>
@@ -536,10 +537,9 @@ address b{font-weight:600}
       <h2 id="pubs-h">Publications</h2>
       <div class="filters">
       <div class="chips" role="group" aria-label="Filter publications by type">
-        <button type="button" class="chip" id="f-all" data-f="all" aria-pressed="true">All <span class="n">231</span></button>
+        <button type="button" class="chip" id="f-all" data-f="all" aria-pressed="true">All <span class="n">230</span></button>
         <button type="button" class="chip" id="f-journal" data-f="journal" aria-pressed="false">Published <span class="n">206</span></button>
         <button type="button" class="chip" id="f-preprint" data-f="preprint" aria-pressed="false">Preprints <span class="n">24</span></button>
-        <button type="button" class="chip" id="f-prepreprint" data-f="prepreprint" aria-pressed="false">Pre-preprints <span class="n">1</span></button>
       </div>
       <label class="ysel fr" for="f-year"><span class="sr">Year</span>
         <select id="f-year">
@@ -576,10 +576,8 @@ address b{font-weight:600}
       </label>
       </div>
     </div>
-    <p class="pp-note"><span class="kind k-prepreprint">Pre-preprints</span> are works we produced with heavy use of generative AI. They are under human review and rewriting.</p>
     <div class="pubs fr">
-      <details class="yr" open><summary><h3>2026</h3><span class="yr-n">38 works</span><span class="yr-t" aria-hidden="true"></span></summary><ol class="publist">
-<li class="pub" data-k="prepreprint"><span class="kind k-prepreprint">Pre-preprint</span><h4 class="pt"><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Pentagonal_Faber%E2%80%93Krahn.pdf" target="_blank" rel="noopener">The pentagonal Faber–Krahn inequality: local stability and a computer-assisted global proof</a></h4><p class="pa"><span class="me">Matter of Shapes</span></p><p class="pv"><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Pentagonal_Faber%E2%80%93Krahn.pdf" target="_blank" rel="noopener">PDF</a></p></li>
+      <details class="yr" open><summary><h3>2026</h3><span class="yr-n">37 works</span><span class="yr-t" aria-hidden="true"></span></summary><ol class="publist">
 <li class="pub" data-k="preprint"><span class="kind k-preprint">Preprint</span><h4 class="pt">On the buckling eigenvalue of unbounded cylinders</h4><p class="pa"><span class="me">P. Acampora</span>, <span class="me">E. Cristoforoni</span>, <span class="me">C. Nitsch</span>, <span class="me">C. Trombetti</span></p><p class="pv"><a href="https://arxiv.org/abs/2607.15981" target="_blank" rel="noopener">arXiv:<span class="mono">2607.15981</span></a></p></li>
 <li class="pub" data-k="preprint"><span class="kind k-preprint">Preprint</span><h4 class="pt">Sharp stability for the Talenti inequality</h4><p class="pa"><span class="me">P. Acampora</span>, J. Lamboley, I. Mazari-Fouquer</p><p class="pv"><a href="https://arxiv.org/abs/2610.31369" target="_blank" rel="noopener">arXiv:<span class="mono">2610.31369</span></a></p></li>
 <li class="pub" data-k="preprint"><span class="kind k-preprint">Preprint</span><h4 class="pt">A unified quantitative approach to Chiti and Kohler-Jobin inequalities</h4><p class="pa"><span class="me">V. Amato</span>, <span class="me">L. Barbato</span>, <span class="me">E. Cristoforoni</span>, <span class="me">A. L. Masiello</span>, <span class="me">C. Nitsch</span>, <span class="me">C. Trombetti</span>, <span class="me">F. Villone</span></p><p class="pv"><a href="https://arxiv.org/abs/2610.31063" target="_blank" rel="noopener">arXiv:<span class="mono">2610.31063</span></a></p></li>
@@ -870,6 +868,23 @@ address b{font-weight:600}
     <p class="pubs-note" id="pubs-note">All our works, 1997–2026. Names in bold are members of the group.</p>
   </section>
 
+  <div class="wrap"><div class="rule r2"></div></div>
+
+  <section id="prepreprints" class="sec wrap" aria-labelledby="pp-h">
+    <div class="sec-head">
+      <h2 id="pp-h">Pre-preprints</h2>
+      <p>Works we produced with heavy use of generative AI. They are under human review and rewriting and have not been peer reviewed.</p>
+    </div>
+    <div class="pubs pp fr">
+      <ol class="publist pplist">
+<li class="pub" data-k="prepreprint" data-path="pre-preprints/Kawohl_conjecture.pdf"><span class="kind k-prepreprint">2026</span><h4 class="pt"><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Kawohl_conjecture.pdf" target="_blank" rel="noopener">A concave obstacle in a convex domain whose solution is not quasi-concave</a></h4><p class="pa"><span class="me">Matter of Shapes</span></p><p class="pv"><span class="venue">Uploaded 18 November 2026</span><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Kawohl_conjecture.pdf" target="_blank" rel="noopener">PDF</a></p></li>
+<li class="pub" data-k="prepreprint" data-path="pre-preprints/regular_polygons_monotonicity.pdf"><span class="kind k-prepreprint">2026</span><h4 class="pt"><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/regular_polygons_monotonicity.pdf" target="_blank" rel="noopener">A conformal approach to the monotonicity of the first Dirichlet eigenvalue of regular polygons</a></h4><p class="pa"><span class="me">Matter of Shapes</span></p><p class="pv"><span class="venue">Uploaded 18 November 2026</span><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/regular_polygons_monotonicity.pdf" target="_blank" rel="noopener">PDF</a></p></li>
+<li class="pub" data-k="prepreprint" data-path="pre-preprints/Neumann_infinity_Laplacian.pdf"><span class="kind k-prepreprint">2026</span><h4 class="pt"><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Neumann_infinity_Laplacian.pdf" target="_blank" rel="noopener">The first nontrivial Neumann eigenvalue of the infinity Laplacian beyond convex domains</a></h4><p class="pa"><span class="me">Matter of Shapes</span></p><p class="pv"><span class="venue">Uploaded 18 November 2026</span><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Neumann_infinity_Laplacian.pdf" target="_blank" rel="noopener">PDF</a></p></li>
+<li class="pub" data-k="prepreprint" data-path="pre-preprints/Pentagonal_Faber–Krahn.pdf"><span class="kind k-prepreprint">2026</span><h4 class="pt"><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Pentagonal_Faber%E2%80%93Krahn.pdf" target="_blank" rel="noopener">The pentagonal Faber–Krahn inequality: local stability and a computer-assisted global proof</a></h4><p class="pa"><span class="me">Matter of Shapes</span></p><p class="pv"><span class="venue">Uploaded 16 November 2026</span><a href="https://github.com/matterofshapes/repository/blob/main/pre-preprints/Pentagonal_Faber%E2%80%93Krahn.pdf" target="_blank" rel="noopener">PDF</a></p></li>
+      </ol>
+    </div>
+  </section>
+
   <div class="wrap"><div class="rule"></div></div>
 
   <section id="events" class="sec wrap" aria-labelledby="events-h">
@@ -1090,11 +1105,11 @@ address b{font-weight:600}
   sync();
 })();
 (function(){
-  /* On the public site (GitHub Pages) the list is read from PUBLICATIONS.md in the repository
-     "papers"; elsewhere the list built into the page is kept. */
+  /* On the public site (GitHub Pages) the lists are read from PUBLICATIONS.md in the repository
+     "repository"; elsewhere the lists built into the page are kept. Pre-preprints go to their own section. */
   if(!/\.github\.io$/.test(location.hostname)||!window.fetch) return;
-  var RAW='https://raw.githubusercontent.com/matterofshapes/repository/main/PUBLICATIONS.md', BLOB='https://github.com/matterofshapes/repository/blob/main/', MEMBERS=["A. L. Masiello", "A. Porricelli", "C. Nitsch", "C. Trombetti", "E. Cristoforoni", "F. Della Pietra", "F. Salerno", "F. Villone", "F. de Giovanni", "G. Paoli", "L. Barbato", "Matter of Shapes", "N. Ciotola", "N. Gavitone", "P. Acampora", "R. Sannipoli", "V. Amato"];
-  var ORDER=['prepreprint','preprint','journal'], LABEL={journal:'Published',preprint:'Preprint',prepreprint:'Pre-preprint'}, OPEN=2;
+  var RAW='https://raw.githubusercontent.com/matterofshapes/repository/main/PUBLICATIONS.md', BLOB='https://github.com/matterofshapes/repository/blob/main/', API='https://api.github.com/repos/matterofshapes/repository/commits', MEMBERS=["A. L. Masiello", "A. Porricelli", "C. Nitsch", "C. Trombetti", "E. Cristoforoni", "F. Della Pietra", "F. Salerno", "F. Villone", "F. de Giovanni", "G. Paoli", "L. Barbato", "Matter of Shapes", "N. Ciotola", "N. Gavitone", "P. Acampora", "R. Sannipoli", "V. Amato"];
+  var ORDER=['preprint','journal'], LABEL={journal:'Published',preprint:'Preprint',prepreprint:'Pre-preprint'}, OPEN=2;
   var EMPTY={'':1,'—':1,'-':1,'–':1};
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function attr(s){return esc(s).replace(/"/g,'&quot;');}
@@ -1104,6 +1119,8 @@ address b{font-weight:600}
   function inline(s){var r='',p=0,m;LINK.lastIndex=0;while((m=LINK.exec(s))){
     r+=fmt(s.slice(p,m.index))+'<a href="'+attr(abs(m[2]))+'" target="_blank" rel="noopener">'+fmt(m[1])+'</a>';p=LINK.lastIndex;}
     return r+fmt(s.slice(p));}
+  function pdfPath(p){var m,s=p.l+' '+p.t,re=new RegExp(LINK.source,'g');while((m=re.exec(s))){var u=abs(m[2]);
+    if(u.indexOf(BLOB)===0)return decodeURIComponent(u.slice(BLOB.length));}return '';}
   function links(s){var r='',m;LINK.lastIndex=0;while((m=LINK.exec(s))){var t=esc(m[1]);
     if(t.indexOf('arXiv:')===0)t='arXiv:<span class="mono">'+t.slice(6)+'</span>';
     r+='<a href="'+attr(abs(m[2]))+'" target="_blank" rel="noopener">'+t+'</a>';}
@@ -1119,16 +1136,31 @@ address b{font-weight:600}
       if(c.length<5||!/^\d{4}$/.test(c[0]))return;
       out.push({k:kind,y:+c[0],t:c[1],a:c[2],d:c[3],l:c[4]});});
     return out;}
-  function render(items){var ys=[];items.forEach(function(p){if(ys.indexOf(p.y)<0)ys.push(p.y);});ys.sort(function(a,b){return b-a;});
+  function item(p,label){var v=EMPTY[p.d]?'':'<span class="venue">'+inline(p.d)+'</span>';
+    var path=p.k==='prepreprint'?pdfPath(p):'',dp=path?' data-path="'+attr(path)+'"':'';
+    return '<li class="pub" data-k="'+p.k+'"'+dp+'><span class="kind k-'+p.k+'">'+label+'</span><h4 class="pt">'+inline(p.t)+'</h4><p class="pa">'+authors(p.a)+'</p><p class="pv">'+v+links(p.l)+'</p></li>';}
+  function renderPP(items){var pp=items.filter(function(p){return p.k==='prepreprint';});
+    pp=pp.map(function(p,i){return [p,i];}).sort(function(a,b){return b[0].y-a[0].y||a[1]-b[1];}).map(function(x){return x[0];});
+    return pp.length?pp.map(function(p){return item(p,String(p.y));}).join('\n'):'<li class="pp-none">No pre-preprints at the moment.</li>';}
+  function render(items){items=items.filter(function(p){return p.k!=='prepreprint';});var ys=[];items.forEach(function(p){if(ys.indexOf(p.y)<0)ys.push(p.y);});ys.sort(function(a,b){return b-a;});
     return ys.map(function(y){var lis=[];ORDER.forEach(function(k){items.forEach(function(p){if(p.y!==y||p.k!==k)return;
-      var v=EMPTY[p.d]?'':'<span class="venue">'+inline(p.d)+'</span>';
-      lis.push('<li class="pub" data-k="'+k+'"><span class="kind k-'+k+'">'+LABEL[k]+'</span><h4 class="pt">'+inline(p.t)+'</h4><p class="pa">'+authors(p.a)+'</p><p class="pv">'+v+links(p.l)+'</p></li>');});});
+      lis.push(item(p,LABEL[k]));});});
       var n=lis.length;
       return '<details class="yr"'+(ys.indexOf(y)<OPEN?' open':'')+'><summary><h3>'+y+'</h3><span class="yr-n">'+n+(n===1?' work':' works')+'</span><span class="yr-t" aria-hidden="true"></span></summary><ol class="publist">\n'+lis.join('\n')+'\n</ol></details>';}).join('\n');}
+  /* the date of a pre-preprint is the day its PDF was uploaded to the repository (and of its last update), read
+     from the GitHub history; it replaces what the Details column says */
+  function day(c){return new Date(c.commit.committer.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Rome'});}
+  function stamp(li){
+    fetch(API+'?per_page=100&path='+li.getAttribute('data-path').split('/').map(encodeURIComponent).join('/')).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(cs){
+      if(!cs||!cs.length)return;var first=day(cs[cs.length-1]),last=day(cs[0]);
+      var pv=li.querySelector('.pv'),v=pv.querySelector('.venue');if(!v){v=document.createElement('span');v.className='venue';pv.insertBefore(v,pv.firstChild);}
+      v.textContent='Uploaded '+first+(last!==first?' · updated '+last:'');
+    }).catch(function(){});}
   fetch(RAW,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(md){
     var items=parse(md);if(!items.length)return;
     document.querySelector('#publications .pubs').innerHTML=render(items);
-    var ys=items.map(function(p){return p.y;}),lo=Math.min.apply(0,ys),hi=Math.max.apply(0,ys);
+    var ppl=document.querySelector('#prepreprints .pplist');if(ppl){ppl.innerHTML=renderPP(items);[].forEach.call(ppl.querySelectorAll('li[data-path]'),stamp);}
+    var ys=items.filter(function(p){return p.k!=='prepreprint';}).map(function(p){return p.y;}),lo=Math.min.apply(0,ys),hi=Math.max.apply(0,ys);
     var note=document.getElementById('pubs-note');if(note)note.textContent='All our works, '+(lo===hi?lo:lo+'–'+hi)+'. Names in bold are members of the group.';
     if(window.__pubsRefresh)window.__pubsRefresh();
   }).catch(function(){});
@@ -1137,3 +1169,4 @@ address b{font-weight:600}
 
 </body>
 </html>
+
